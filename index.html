@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCodeThis.com daily challenge</title>
+    <link rel="stylesheet" href="styles.css" class="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#252f45] flex items-center justify-center min-h-screen">
+	<section class="bg-black/40 w-full max-w-[420px] text-white border border-[#2d3444] flex items-start justify-start flex-col max-h-[450px] overflow-y-auto">
+        <div class="wifi flex items-center justify-start w-full gap-4 p-3 transition-all duration-150 ease-in cursor-pointer hover:bg-[#202738]" onclick="toggleConnect(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.4" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" class="opacity-30" />
+                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" class="opacity-30" />
+                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0"  class="opacity-30" />
+            </svg>
+            <span class="leading-tight grow">
+                <p>Florin's Office</p>
+                <span class="text-slate-400">Weak security</span>
+            </span>
+        </div>
+        <div class="w-full pl-16 connect max-w-[96%] my-2 hidden transition-all duration-150 ease-in">
+            <p>Enter the network security key</p>
+            <input type="password" class="w-full p-1 mt-2 password outline-slate-500 text-slate-500" oninput="checkPasswordLength(this)">
+            <p>You can also connect by pushing the button on the router.</p>
+            <label class="flex items-center justify-start w-full gap-2">
+                <input type="checkbox">
+                <p class="grow">Share network with my contacts</p>
+            </label>
+            <div class="flex items-center justify-center gap-1 mt-2 font-semibold">
+                <button id="nextButton" data-login="false" class="flex-1 border border-[#818181] py-2 text-[#868686]" disabled onclick="showOverlay(this)">Next</button> 
+                <button class="flex-1 border border-[#37537b] bg-[#37537b] py-2">Cancel</button>
+            </div>
+        </div>
+        
+        <div class="wifi flex items-center justify-start w-full gap-4 p-3 transition-all duration-150 ease-in cursor-pointer hover:bg-[#202738]" onclick="toggleConnect(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.4" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" />
+                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" />
+            </svg>
+            <span class="leading-tight grow">
+                <p>Wireless Home</p>
+                <span class="text-slate-400">Secured</span>
+            </span>
+        </div>
+        <div class="w-full pl-16 connect max-w-[96%] my-2 hidden transition-all duration-150 ease-in">
+            <p>Enter the network security key</p>
+            <input type="password" class="w-full p-1 mt-2 password outline-slate-500 text-slate-500" oninput="checkPasswordLength(this)">
+            <p>You can also connect by pushing the button on the router.</p>
+            <label class="flex items-center justify-start w-full gap-2">
+                <input type="checkbox">
+                <p class="grow">Share network with my contacts</p>
+            </label>
+            <div class="flex items-center justify-center gap-1 mt-2 font-semibold">
+                <button id="nextButton" data-login="true" class="flex-1 border border-[#818181] py-2 text-[#868686]" disabled onclick="showOverlay(this)">Next</button> 
+                <button class="flex-1 border border-[#37537b] bg-[#37537b] py-2">Cancel</button>
+            </div>
+        </div>
+        
+        <div class="flex items-center justify-start w-full gap-4 p-3 transition-all duration-150 ease-in cursor-pointer hover:bg-[#202738]" onclick="toggleConnect(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.4" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" />
+                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0"  class="opacity-30" />
+            </svg>
+            <span class="leading-tight grow">
+                <p>FBI Van #1</p>
+                <span class="text-slate-400">Open</span>
+            </span>
+        </div>
+        <div class="w-full pl-16 connect max-w-[96%] my-2 hidden transition-all duration-150 ease-in">
+            <label class="flex items-center justify-start w-full gap-2">
+                <input type="checkbox" class="w-[18px] aspect-square">
+                <p class="grow">Connect automatically</p>
+            </label>
+            <button class="flex-1 mt-2 border w-1/2 border-[#37537b] float-right bg-[#37537b] py-2" onclick="showOverlay(this)" data-login="false">Connect</button>
+        </div>
+
+
+        <div class="flex wifi items-center justify-start w-full gap-4 p-3 transition-all duration-150 ease-in cursor-pointer hover:bg-[#202738]" onclick="toggleConnect(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.4" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" class="opacity-30" />
+                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" class="opacity-30" />
+            </svg>
+            <span class="leading-tight grow">
+                <p>Drop It Like It's Hotspot</p>
+                <span class="text-slate-400">Open</span>
+            </span>
+        </div>
+        <div class="w-full pl-16 connect max-w-[96%] my-2 hidden transition-all duration-150 ease-in">
+            <label class="flex items-center justify-start w-full gap-2">
+                <input type="checkbox" class="w-[18px] aspect-square">
+                <p class="grow">Connect automatically</p>
+            </label>
+            <button class="flex-1 mt-2 border w-1/2 border-[#37537b] float-right bg-[#37537b] py-2" onclick="showOverlay(this)" data-login="true">Connect</button>
+        </div>
+
+        <div class="flex wifi items-center justify-start w-full gap-4 p-3 transition-all duration-150 ease-in cursor-pointer hover:bg-[#202738]" onclick="toggleConnect(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.4" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" class="opacity-30" />
+                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" class="opacity-30" />
+            </svg>
+            <span class="leading-tight grow">
+                <p>Smooth as buffer</p>
+                <span class="text-slate-400">Open</span>
+            </span>
+        </div>
+        <div class="w-full pl-16 connect max-w-[96%] my-2 hidden transition-all duration-150 ease-in">
+            <label class="flex items-center justify-start w-full gap-2">
+                <input type="checkbox" class="w-[18px] aspect-square">
+                <p class="grow">Connect automatically</p>
+            </label>
+            <button class="flex-1 mt-2 border w-1/2 border-[#37537b] float-right bg-[#37537b] py-2" onclick="showOverlay(this)" data-login="true">Connect</button>
+        </div>
+
+        <div class="flex wifi items-center justify-start w-full gap-4 p-3 transition-all duration-150 ease-in cursor-pointer hover:bg-[#202738]" onclick="toggleConnect(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.4" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" />
+                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" class="opacity-30" />
+            </svg>
+            <span class="leading-tight grow">
+                <p>The LAN of the free</p>
+                <span class="text-slate-400">Open</span>
+            </span>
+        </div>
+        <div class="w-full pl-16 connect max-w-[96%] my-2 hidden transition-all duration-150 ease-in">
+            <label class="flex items-center justify-start w-full gap-2">
+                <input type="checkbox" class="w-[18px] aspect-square">
+                <p class="grow">Connect automatically</p>
+            </label>
+            <button class="flex-1 mt-2 border w-1/2 border-[#37537b] float-right bg-[#37537b] py-2" onclick="showOverlay(this)" data-login="false">Connect</button>
+        </div>
+
+        <div class="flex wifi items-center justify-start w-full gap-4 p-3 transition-all duration-150 ease-in cursor-pointer hover:bg-[#202738]" onclick="toggleConnect(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.4" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" class="opacity-30" />
+                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" class="opacity-30" />
+            </svg>
+            <span class="leading-tight grow">
+                <p>Wi-Find you cute</p>
+                <span class="text-slate-400">Open</span>
+            </span>
+        </div>
+        <div class="w-full pl-16 connect max-w-[96%] my-2 hidden transition-all duration-150 ease-in">
+            <label class="flex items-center justify-start w-full gap-2">
+                <input type="checkbox" class="w-[18px] aspect-square">
+                <p class="grow">Connect automatically</p>
+            </label>
+            <button class="flex-1 mt-2 border w-1/2 border-[#37537b] float-right bg-[#37537b] py-2" onclick="showOverlay(this)" data-login="false">Connect</button>
+        </div>
+
+        <div class="flex wifi items-center justify-start w-full gap-4 p-3 transition-all duration-150 ease-in cursor-pointer hover:bg-[#202738]" onclick="toggleConnect(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-rotate-45" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.4" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" class="opacity-30" />
+                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" class="opacity-30" />
+            </svg>
+            <span class="leading-tight grow">
+                <p>It Hurts When IP</p>
+                <span class="text-slate-400">Open</span>
+            </span>
+        </div>
+        <div class="w-full pl-16 connect max-w-[96%] my-2 hidden transition-all duration-150 ease-in">
+            <label class="flex items-center justify-start w-full gap-2">
+                <input type="checkbox" class="w-[18px] aspect-square">
+                <p class="grow">Connect automatically</p>
+            </label>
+            <button class="flex-1 mt-2 border w-1/2 border-[#37537b] float-right bg-[#37537b] py-2" onclick="showOverlay(this)" data-login="true">Connect</button>
+        </div>
+    </section>
+    <div id="overlay" class="fixed hidden top-0 left-0 z-50  w-full h-full bg-[#121722] opacity-90"></div>
+    <div id="overlayContent2" class="fixed hidden z-50 transform -translate-x-1/2 -translate-y-1/2 bg-white top-1/2 left-1/2 max-w-[490px] w-full rounded-2xl min-h-[400px] text-[#203442]">
+        <button class="absolute right-0 z-50 text-white -top-8" onclick="hideOverlay()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M18 6l-12 12" />
+                <path d="M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="relative w-full overflow-hidden min-h-[400px] rounded-2xl flex items-start justify-start flex-col">
+            <div class="absolute -top-20 w-[200%] h-[250px] bg-gradient-to-tl from-[#0fd5cb] -left-1/2 -rotate-12 to-[#2fe39b]"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="box-content relative pt-5 mx-auto" width="140" height="140" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                <path d="M6.343 12.343a8 8 0 0 1 11.314 0" />
+                <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" />
+            </svg>
+            <p class="block mx-auto mt-16 text-3xl font-semibold">Success!</p>
+            <p class="block mx-auto mt-2 text-xl font-normal">Connection works perfectly.</p>
+            <button class="mx-auto mt-10 text-2xl font-semibold text-[#0094fe]" onclick="hideOverlay()">
+                OK
+            </button>
+            <button class="absolute right-0 z-50 text-white -top-8" onclick="hideOverlay()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="overlayContent" class="fixed hidden z-50 transform -translate-x-1/2 -translate-y-1/2 bg-white top-1/2 left-1/2 max-w-[490px] w-full rounded-2xl min-h-[400px] text-[#203442]">
+        <button class="absolute right-0 z-50 text-white -top-8" onclick="hideOverlay()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M18 6l-12 12" />
+                <path d="M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="relative w-full overflow-hidden min-h-[400px] rounded-2xl flex items-start justify-start flex-col">
+            <div class="absolute -top-20 w-[200%] h-[250px] bg-gradient-to-tl from-[#d61741] -left-1/2 -rotate-12 to-[#ed2f88]"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="box-content relative pt-5 mx-auto" width="140" height="140" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18l.01 0" />
+                <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+                <path d="M6.343 12.343a7.963 7.963 0 0 1 3.864 -2.14m4.163 .155a7.965 7.965 0 0 1 3.287 2" />
+                <path d="M3.515 9.515a12 12 0 0 1 3.544 -2.455m3.101 -.92a12 12 0 0 1 10.325 3.374" />
+                <path d="M3 3l18 18" />
+            </svg>
+
+            <p class="block mx-auto mt-16 text-3xl font-semibold">Error!</p>
+            <p class="block mx-auto mt-2 text-xl font-normal">Connection couldn't be established.</p>
+            <button class="mx-auto mt-10 text-2xl font-semibold text-[#0094fe]" onclick="hideOverlay()">
+                RETRY
+            </button>
+            <button class="absolute right-0 z-50 text-white -top-8" onclick="hideOverlay()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M18 6l-12 12" />
+                    <path d="M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script>
+        function toggleConnect(wifiElement) {
+            const connectElement = wifiElement.nextElementSibling;
+            const connectElements = document.querySelectorAll(".connect");
+
+            connectElements.forEach((element) => {
+                //if (!element.classList.contains("hidden"))
+                element.classList.add("hidden");
+
+            });
+            
+            connectElement.classList.toggle('hidden');
+        }
+        
+        function checkPasswordLength(inputElement) {
+            const nextButton = inputElement.closest(".connect").querySelector("button");
+
+            if (nextButton && inputElement.value.length >= 8) {
+                nextButton.removeAttribute("disabled");
+                nextButton.classList.remove("text-[#868686]");
+                nextButton.classList.add("text-white");
+                nextButton.classList.remove("border-[#818181]");
+                nextButton.classList.add("border-white");
+            } else if (nextButton) {
+                nextButton.setAttribute("disabled", true);
+                nextButton.classList.remove("text-white");
+                nextButton.classList.add("text-[#868686]");
+                nextButton.classList.add("border-[#818181]");
+                nextButton.classList.remove("border-white");
+            }
+        }
+        
+    function toggleButton(inputElement) {
+        const nextButton = document.getElementById("nextButton");
+        if (inputElement.value.length >= 8) {
+            nextButton.removeAttribute("disabled");
+        } else {
+            nextButton.setAttribute("disabled", "true");
+        }
+    }
+    
+    function showOverlay(button) {
+        const overlay = document.getElementById("overlay");
+        
+        let message = null;
+
+        const dataLogin = button.getAttribute("data-login");
+        if(dataLogin === 'false') message = 'overlayContent';
+        else message = 'overlayContent2';
+        
+        const overlayContent = document.getElementById(message);
+
+        overlay.classList.remove("hidden");
+        overlayContent.classList.remove("hidden");
+    }
+    
+    function hideOverlay() {
+        const overlay = document.getElementById("overlay");
+        const overlayContent = document.getElementById("overlayContent");
+        const overlayContent2 = document.getElementById("overlayContent2");
+        
+        overlay.classList.add("hidden");
+        overlayContent.classList.add("hidden");
+        overlayContent2.classList.add("hidden");
+    }
+    </script>
+</body>
+</html>
